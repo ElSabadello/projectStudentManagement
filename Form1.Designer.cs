@@ -30,18 +30,16 @@
         {
             dataGridView1 = new DataGridView();
             ViewGrid_bt = new Button();
-            button1 = new Button();
+            Insert_bt = new Button();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            RegNo_tx = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            label4 = new Label();
+            Name_tx = new TextBox();
+            Address_tx = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -53,7 +51,7 @@
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(800, 237);
+            dataGridView1.Size = new Size(781, 237);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -67,14 +65,15 @@
             ViewGrid_bt.UseVisualStyleBackColor = true;
             ViewGrid_bt.Click += ViewGrid_bt_Click;
             // 
-            // button1
+            // Insert_bt
             // 
-            button1.Location = new Point(112, 346);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 2;
-            button1.Text = "View";
-            button1.UseVisualStyleBackColor = true;
+            Insert_bt.Location = new Point(112, 346);
+            Insert_bt.Name = "Insert_bt";
+            Insert_bt.Size = new Size(94, 29);
+            Insert_bt.TabIndex = 2;
+            Insert_bt.Text = "Insert";
+            Insert_bt.UseVisualStyleBackColor = true;
+            Insert_bt.Click += Insert_bt_Click;
             // 
             // button2
             // 
@@ -103,87 +102,71 @@
             button4.Text = "View";
             button4.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // RegNo_tx
             // 
-            textBox1.Location = new Point(12, 277);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(143, 277);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 7;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(274, 277);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 8;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(405, 277);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 9;
+            RegNo_tx.Location = new Point(12, 277);
+            RegNo_tx.Name = "RegNo_tx";
+            RegNo_tx.Size = new Size(173, 27);
+            RegNo_tx.TabIndex = 15;
+            RegNo_tx.TextChanged += RegNo_tx_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(12, 254);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
+            label1.Size = new Size(62, 20);
             label1.TabIndex = 10;
-            label1.Text = "label1";
+            label1.Text = "Reg No.";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(143, 254);
+            label2.Location = new Point(191, 254);
             label2.Name = "label2";
-            label2.Size = new Size(50, 20);
+            label2.Size = new Size(104, 20);
             label2.TabIndex = 11;
-            label2.Text = "label2";
+            label2.Text = "Student Name";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(274, 254);
+            label3.Location = new Point(370, 254);
             label3.Name = "label3";
-            label3.Size = new Size(50, 20);
+            label3.Size = new Size(62, 20);
             label3.TabIndex = 12;
-            label3.Text = "label3";
+            label3.Text = "Address";
+            label3.Click += label3_Click;
             // 
-            // label4
+            // Name_tx
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(405, 254);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 20);
-            label4.TabIndex = 13;
-            label4.Text = "label4";
+            Name_tx.Location = new Point(191, 277);
+            Name_tx.Name = "Name_tx";
+            Name_tx.Size = new Size(173, 27);
+            Name_tx.TabIndex = 13;
+            // 
+            // Address_tx
+            // 
+            Address_tx.Location = new Point(370, 277);
+            Address_tx.Name = "Address_tx";
+            Address_tx.Size = new Size(173, 27);
+            Address_tx.TabIndex = 14;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label4);
+            ClientSize = new Size(781, 450);
+            Controls.Add(Address_tx);
+            Controls.Add(Name_tx);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(RegNo_tx);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(Insert_bt);
             Controls.Add(ViewGrid_bt);
             Controls.Add(dataGridView1);
             Name = "Form1";
@@ -198,17 +181,15 @@
 
         private DataGridView dataGridView1;
         private Button ViewGrid_bt;
-        private Button button1;
+        private Button Insert_bt;
         private Button button2;
         private Button button3;
         private Button button4;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox RegNo_tx;
         private Label label1;
         private Label label2;
         private Label label3;
-        private Label label4;
+        private TextBox Name_tx;
+        private TextBox Address_tx;
     }
 }
