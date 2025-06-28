@@ -65,10 +65,33 @@ namespace projectStudentManagement
             try
             {
                 MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("INSERT INTO student(RegNo, Student, Address) VALUES(" + RegNo_tx.Text + ",'" + Name_tx.Text + "','" + Address_tx.Text + "')", conn);
-                DataSet ds = new DataSet(); 
+                DataSet ds = new DataSet();
                 mySqlDataAdapter.Fill(ds);
                 viewDataGrid();
                 MessageBox.Show("Student Inserted Successfully!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex + "");
+            }
+        }
+
+        private void Update_bt_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string update_query = "UPDATE student SET RegNo = @regno, Student = @name, Address = @address WHERE id = @id";
+                MySqlCommand cmd = new MySqlCommand(update_query, conn);
+                cmd.Parameters.AddWithValue("@regno", RegNo_tx.Text);
+                cmd.Parameters.AddWithValue("@name", Name_tx.Text);
+                cmd.Parameters.AddWithValue("@address", Address_tx.Text);
+                cmd.Parameters.AddWithValue("@id", dataGridView1.SelectedRows[0].Cells[0].Value);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                viewDataGrid();
+                MessageBox.Show("Student Updated Successfully!");
             }
             catch (Exception ex)
             {

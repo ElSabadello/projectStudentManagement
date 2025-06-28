@@ -31,7 +31,7 @@
             dataGridView1 = new DataGridView();
             ViewGrid_bt = new Button();
             Insert_bt = new Button();
-            button2 = new Button();
+            Update_bt = new Button();
             button3 = new Button();
             button4 = new Button();
             RegNo_tx = new TextBox();
@@ -75,14 +75,15 @@
             Insert_bt.UseVisualStyleBackColor = true;
             Insert_bt.Click += Insert_bt_Click;
             // 
-            // button2
+            // Update_bt
             // 
-            button2.Location = new Point(212, 346);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 3;
-            button2.Text = "View";
-            button2.UseVisualStyleBackColor = true;
+            Update_bt.Location = new Point(212, 346);
+            Update_bt.Name = "Update_bt";
+            Update_bt.Size = new Size(94, 29);
+            Update_bt.TabIndex = 3;
+            Update_bt.Text = "Update";
+            Update_bt.UseVisualStyleBackColor = true;
+            Update_bt.Click += Update_bt_Click;
             // 
             // button3
             // 
@@ -165,7 +166,7 @@
             Controls.Add(RegNo_tx);
             Controls.Add(button4);
             Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(Update_bt);
             Controls.Add(Insert_bt);
             Controls.Add(ViewGrid_bt);
             Controls.Add(dataGridView1);
@@ -182,7 +183,7 @@
         private DataGridView dataGridView1;
         private Button ViewGrid_bt;
         private Button Insert_bt;
-        private Button button2;
+        private Button Update_bt;
         private Button button3;
         private Button button4;
         private TextBox RegNo_tx;
