@@ -64,9 +64,14 @@ namespace projectStudentManagement
         {
             try
             {
-                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("INSERT INTO student(RegNo, Student, Address) VALUES(" + RegNo_tx.Text + ",'" + Name_tx.Text + "','" + Address_tx.Text + "')", conn);
-                DataSet ds = new DataSet();
-                mySqlDataAdapter.Fill(ds);
+                string query = "INSERT INTO student(RegNo, Student, Address) VALUES(@regno, @name, @address)";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@regno", RegNo_tx.Text);
+                cmd.Parameters.AddWithValue("@name", Name_tx.Text);
+                cmd.Parameters.AddWithValue("@address", Address_tx.Text);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
                 viewDataGrid();
                 MessageBox.Show("Student Inserted Successfully!");
             }
@@ -97,6 +102,52 @@ namespace projectStudentManagement
             {
                 MessageBox.Show(ex + "");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Delete_bt_Click(object sender, EventArgs e)
+        {
+            string query = "DELETE from student WHERE id = @id";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id", dataGridView1.SelectedRows[0].Cells["id"].Value);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            viewDataGrid();
+            MessageBox.Show("Student deleted Successfully!");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Clear_bt_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
+        }
+
+        private void Open_bt_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (DialogResult.OK == openFileDialog.ShowDialog())
+            {
+                pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

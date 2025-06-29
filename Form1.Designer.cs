@@ -32,14 +32,13 @@
             ViewGrid_bt = new Button();
             Insert_bt = new Button();
             Update_bt = new Button();
-            button3 = new Button();
-            button4 = new Button();
             RegNo_tx = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             Name_tx = new TextBox();
             Address_tx = new TextBox();
+            Delete_bt = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -84,24 +83,6 @@
             Update_bt.Text = "Update";
             Update_bt.UseVisualStyleBackColor = true;
             Update_bt.Click += Update_bt_Click;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(312, 346);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 4;
-            button3.Text = "View";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(412, 346);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 29);
-            button4.TabIndex = 5;
-            button4.Text = "View";
-            button4.UseVisualStyleBackColor = true;
             // 
             // RegNo_tx
             // 
@@ -153,19 +134,28 @@
             Address_tx.Size = new Size(173, 27);
             Address_tx.TabIndex = 14;
             // 
+            // Delete_bt
+            // 
+            Delete_bt.Location = new Point(312, 346);
+            Delete_bt.Name = "Delete_bt";
+            Delete_bt.Size = new Size(94, 29);
+            Delete_bt.TabIndex = 16;
+            Delete_bt.Text = "Delete";
+            Delete_bt.UseVisualStyleBackColor = true;
+            Delete_bt.Click += Delete_bt_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(781, 450);
+            Controls.Add(Delete_bt);
             Controls.Add(Address_tx);
             Controls.Add(Name_tx);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(RegNo_tx);
-            Controls.Add(button4);
-            Controls.Add(button3);
             Controls.Add(Update_bt);
             Controls.Add(Insert_bt);
             Controls.Add(ViewGrid_bt);
@@ -184,13 +174,12 @@
         private Button ViewGrid_bt;
         private Button Insert_bt;
         private Button Update_bt;
-        private Button button3;
-        private Button button4;
         private TextBox RegNo_tx;
         private Label label1;
         private Label label2;
         private Label label3;
         private TextBox Name_tx;
         private TextBox Address_tx;
+        private Button Delete_bt;
     }
 }
