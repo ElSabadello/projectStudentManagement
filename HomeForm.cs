@@ -53,5 +53,23 @@ namespace projectStudentManagement
             UpdateForm updateForm = new UpdateForm();
             updateForm.ShowDialog();
         }
+
+        private void Delete_bt_Click(object sender, EventArgs e)
+        {
+            using var conn = DbConnection.GetConnection();
+            const string query = "DELETE from student WHERE id = @id";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", dataGridView1.SelectedRows[0].Cells["id"].Value);
+                cmd.ExecuteNonQuery();
+                viewGrid();
+                MessageBox.Show("Student deleted Successfully!");
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Failed to delete {ex.Message}");
+            }
+        }
     }
 }

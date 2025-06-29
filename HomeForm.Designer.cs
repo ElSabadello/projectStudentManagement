@@ -31,6 +31,7 @@
             dataGridView1 = new DataGridView();
             Add_bt = new Button();
             Update_bt = new Button();
+            Delete_bt = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -66,11 +67,23 @@
             Update_bt.UseVisualStyleBackColor = true;
             Update_bt.Click += Update_bt_Click;
             // 
+            // Delete_bt
+            // 
+            Delete_bt.Font = new Font("Segoe UI", 13F);
+            Delete_bt.Location = new Point(12, 136);
+            Delete_bt.Name = "Delete_bt";
+            Delete_bt.Size = new Size(121, 56);
+            Delete_bt.TabIndex = 3;
+            Delete_bt.Text = "Delete";
+            Delete_bt.UseVisualStyleBackColor = true;
+            Delete_bt.Click += Delete_bt_Click;
+            // 
             // HomeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(Delete_bt);
             Controls.Add(Update_bt);
             Controls.Add(Add_bt);
             Controls.Add(dataGridView1);
@@ -85,5 +98,6 @@
         private DataGridView dataGridView1;
         private Button Add_bt;
         private Button Update_bt;
+        private Button Delete_bt;
     }
 }
