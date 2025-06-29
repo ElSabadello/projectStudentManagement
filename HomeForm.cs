@@ -25,7 +25,7 @@ namespace projectStudentManagement
             insertForm.ShowDialog();
         }
 
-        private void viewGrid()
+        public void viewGrid()
         {
             const string query = "SELECT * FROM student";
 
@@ -45,7 +45,13 @@ namespace projectStudentManagement
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            viewGrid();    
+            viewGrid();
+        }
+
+        private void Update_bt_Click(object sender, EventArgs e)
+        {
+            UpdateForm updateForm = new UpdateForm();
+            updateForm.ShowDialog();
         }
     }
 }
